@@ -11,8 +11,8 @@ from pydub import AudioSegment
 from multiprocessing import Pool
 
 global MUSIC_DIR, COMMENT_DIR, SC_CLIENT_ID, AZURE_API_KEY, AZURE_URL
-MUSIC_DIR = '/Users/jasonliu/treehacks/music/'
-COMMENT_DIR = '/Users/jasonliu/treehacks/comments/'
+# MUSIC_DIR = '/Users/jasonliu/treehacks/music/'
+# COMMENT_DIR = '/Users/jasonliu/treehacks/comments/'
 
 
 def clearFolder():
@@ -123,7 +123,9 @@ def f(link):
 
 #multiprocessing attempt WORKED
 if __name__ == '__main__':
-	global SC_CLIENT_ID, AZURE_API_KEY, AZURE_URL
+	global SC_CLIENT_ID, AZURE_API_KEY, AZURE_URL, MUSIC_DIR, COMMENT_DIR
+	MUSIC_DIR = os.getcwd() + '/music/'
+	COMMENT_DIR = os.getcwd() + '/comments/'
 	data = json.loads(open('secret.json').read())
 	SC_CLIENT_ID =  data['sc_client_id']
 	AZURE_API_KEY = data['azure_api_key']

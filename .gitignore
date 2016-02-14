@@ -1,2 +1,5 @@
 *.pyc
 *.json
+*.csv
+*.mp3
+*.wav
